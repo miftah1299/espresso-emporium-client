@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
 import HomeLayout from "../layouts/HomeLayout";
-import AddCoffee from "../components/AddCoffee";
-import UpdateCoffee from "../components/UpdateCoffee";
+import AddCoffee from "../pages/AddCoffee";
+import UpdateCoffee from "../pages/UpdateCoffee";
 
 const routes = createBrowserRouter([
     {

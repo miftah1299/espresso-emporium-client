@@ -2,7 +2,7 @@
 const UpdateCoffee = () => {
     return (
         <div>
-            Update Coffee Page
+            Update Coffee Page 
         </div>
     );
 };
