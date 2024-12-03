@@ -11,8 +11,19 @@ const AddCoffee = () => {
             details: form.details.value,
             photo: form.photo.value,
         };
-        console.log(coffee);
+        // console.log(coffee);
         // form.reset();
+        fetch("http://localhost:5000/coffee", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(coffee),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+            });
     };
 
     return (
