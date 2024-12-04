@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
-const CoffeeCard = ({ coffee }) => {
+const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
     const { _id, name, chef, photo } = coffee || {}; // {} is a fallback in case coffee is undefined
 
     const handleDelete = (_id) => {
@@ -32,6 +32,12 @@ const CoffeeCard = ({ coffee }) => {
                             });
                             // Reload the page
                             // window.location.reload();
+
+                            // Update the state
+                            const remainingCoffees = coffees.filter(
+                                (coffee) => coffee._id !== _id
+                            );
+                            setCoffees(remainingCoffees);
                         }
                     });
             }
@@ -92,7 +98,9 @@ const CoffeeCard = ({ coffee }) => {
 };
 
 CoffeeCard.propTypes = {
-    coffee: PropTypes.object,
+    coffee: PropTypes.object.isRequired,
+    coffees: PropTypes.array.isRequired,
+    setCoffees: PropTypes.func,
 };
 
 export default CoffeeCard;
