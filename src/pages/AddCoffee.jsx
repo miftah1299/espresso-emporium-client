@@ -3,6 +3,7 @@ const AddCoffee = () => {
     const handleAddCoffee = (event) => {
         event.preventDefault();
         const form = event.target;
+        
         const coffee = {
             name: form.name.value,
             chef: form.chef.value,
@@ -43,7 +44,7 @@ const AddCoffee = () => {
                     Add New Coffee
                 </h1>
                 <p className="text-center text-gray-500 mb-8">
-                    Fill in the form below to add a new coffee.
+                    Fill in the form below to add a new coffee
                 </p>
                 <form onSubmit={handleAddCoffee}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
