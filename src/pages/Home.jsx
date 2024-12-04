@@ -10,7 +10,7 @@ const Home = () => {
             <h2>Our Popular Products</h2>
             <button className="btn">Add Coffee</button>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="max-w-screen-lg mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
                 {coffees.map((coffee) => (
                     <CoffeeCard key={coffee._id} coffee={coffee} />
                 ))}
