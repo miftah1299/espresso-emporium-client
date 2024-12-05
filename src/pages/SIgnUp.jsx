@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../provider/AuthProvider";
+import { AuthContext } from "../provider/AuthContext";
 
 const Signup = () => {
     const { createUser } = useContext(AuthContext);
@@ -37,7 +37,7 @@ const Signup = () => {
                     });
             })
             .catch((error) => {
-                // console.log(error);
+                console.log(error);
             });
     };
 

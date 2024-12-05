@@ -14,9 +14,11 @@ const AddCoffee = () => {
             photo: form.photo.value,
         };
         // console.log(coffee);
+
+        // Add coffee to the database
         fetch("https://espresso-server-gamma.vercel.app/coffee", {
             method: "POST",
-            Navbars: {
+            headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(coffee),
@@ -25,16 +27,16 @@ const AddCoffee = () => {
             .then((data) => {
                 // console.log(data);
                 if (data.insertedId) {
+                    // console.log("Coffee added successfully");
                     Swal.fire({
                         title: "Success!",
                         text: "Coffee added successfully!",
                         icon: "success",
                         confirmButtonText: "Close",
                     });
+                    form.reset();
                 }
             });
-
-        // form.reset();
     };
 
     return (
