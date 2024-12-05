@@ -19,7 +19,7 @@ const Users = () => {
         }).then((result) => {
             // if user confirms delete
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/users/${id}`, {
+                fetch(`https://espresso-server-gamma.vercel.app/users/${id}`, {
                     method: "DELETE",
                 })
                     .then((res) => res.json())
@@ -57,6 +57,7 @@ const Users = () => {
                             <th>Email</th>
                             {/* <th>Photo</th> */}
                             <th>Created At</th>
+                            <th>Last Signin At</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -74,6 +75,7 @@ const Users = () => {
                                         alt="user"
                                     />
                                 </td> */}
+                                <td>{user.lastSigninTime}</td>
                                 <td>{user.createdAt}</td>
                                 <td>
                                     <button className="btn bg-primayLight">

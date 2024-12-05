@@ -16,12 +16,12 @@ const Signup = () => {
 
         createUser(email, password)
             .then((result) => {
-                console.log(result);
+                // console.log(result);
                 const createdAt = result?.user?.metadata?.creationTime;
 
                 const newUser = { name, email, photo, createdAt };
                 // save new user info to database
-                fetch("http://localhost:5000/users", {
+                fetch("https://espresso-server-gamma.vercel.app/users", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -37,7 +37,7 @@ const Signup = () => {
                     });
             })
             .catch((error) => {
-                console.log(error);
+                // console.log(error);
             });
     };
 

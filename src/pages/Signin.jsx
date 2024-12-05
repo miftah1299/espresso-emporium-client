@@ -21,7 +21,7 @@ const Signin = () => {
                 const lastSigninTime = result?.user?.metadata?.lastSignInTime;
                 const loginInfo = { email, lastSigninTime };
 
-                fetch(`http://localhost:5000/users`,{
+                fetch(`https://espresso-server-gamma.vercel.app/users`,{
                     method: "PATCH",
                     headers: {
                         "Content-Type": "application/json",
@@ -30,11 +30,11 @@ const Signin = () => {
                 })
                     .then((res) => res.json())
                     .then((data) => {
-                        console.log("user login info updated", data);
+                        // console.log("user login info updated", data);
                     });
             })
             .catch((error) => {
-                console.log(error);
+                // console.log(error);
             });
     };
 

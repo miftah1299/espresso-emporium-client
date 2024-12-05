@@ -22,7 +22,7 @@ const UpdateCoffee = () => {
         // console.log(updatedCoffee);
 
         // send a PUT request to update the coffee
-        fetch(`http://localhost:5000/coffee/${_id}`, {
+        fetch(`https://espresso-server-gamma.vercel.app/coffee/${_id}`, {
             method: "PUT",
             Navbars: {
                 "Content-Type": "application/json",
@@ -31,7 +31,7 @@ const UpdateCoffee = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: "Success!",

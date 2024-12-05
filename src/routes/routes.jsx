@@ -17,7 +17,8 @@ const routes = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
-                loader: () => fetch("http://localhost:5000/coffee"),
+                loader: () =>
+                    fetch("https://espresso-server-gamma.vercel.app/coffee"),
             },
             {
                 path: "/addcoffee",
@@ -27,12 +28,15 @@ const routes = createBrowserRouter([
                 path: "/updatecoffee/:id",
                 element: <UpdateCoffee />,
                 loader: ({ params }) =>
-                    fetch(`http://localhost:5000/coffee/${params.id}`),
+                    fetch(
+                        `https://espresso-server-gamma.vercel.app/coffee/${params.id}`
+                    ),
             },
             {
                 path: "users",
                 element: <Users />,
-                loader: () => fetch("http://localhost:5000/users"),
+                loader: () =>
+                    fetch("https://espresso-server-gamma.vercel.app/users"),
             },
         ],
     },
