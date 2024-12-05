@@ -4,7 +4,7 @@ const Navbar = () => {
     return (
         <nav className="bg-primaryDark p-4">
             <div className="container mx-auto flex justify-between items-center">
-                <div className="text-white text-lg font-bold">
+                <div className="font-rancho text-white text-3xl font-medium">
                     Espresso Emporium
                 </div>
                 <div className="space-x-4">
@@ -22,6 +22,13 @@ const Navbar = () => {
                         activeClassName="text-white"
                     >
                         Sign In
+                    </NavLink>
+                    <NavLink
+                        to="/users"
+                        className="text-primayLight hover:text-white"
+                        activeClassName="text-white"
+                    >
+                        Users
                     </NavLink>
                 </div>
             </div>

@@ -63,7 +63,7 @@ const Signin = () => {
                         {/* Sign in with Google */}
                         <button
                             // onClick={handleGoogleSignIn}
-                            className="btn btn-outline px-6 py-2 rounded-full hover:bg-primary"
+                            className="btn btn-outline px-6 py-2 rounded-full"
                         >
                             <FcGoogle size={24} />
                             Sign In with Google
