@@ -42,7 +42,7 @@ const Users = () => {
     };
 
     return (
-        <div>
+        <div className="max-w-screen-xl mx-auto py-20">
             <h2 className="text-2xl font-semibold mb-4">
                 Users: {users.length}
             </h2>
@@ -65,7 +65,7 @@ const Users = () => {
                         {/* Display users */}
                         {users.map((user) => (
                             <tr key={user._id} className="hover">
-                                <th>1</th>
+                                <th>{users.indexOf(user) + 1}</th> {/* index */}
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                                 {/* <td>
