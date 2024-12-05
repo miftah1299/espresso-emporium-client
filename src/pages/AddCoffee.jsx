@@ -14,7 +14,7 @@ const AddCoffee = () => {
             photo: form.photo.value,
         };
         // console.log(coffee);
-        fetch("http://localhost:5000/coffee", {
+        fetch("https://espresso-server-gamma.vercel.app/coffee", {
             method: "POST",
             Navbars: {
                 "Content-Type": "application/json",
@@ -23,7 +23,7 @@ const AddCoffee = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 if (data.insertedId) {
                     Swal.fire({
                         title: "Success!",
