@@ -1,14 +1,50 @@
+import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Signin = () => {
+    const { signinUser } = useContext(AuthContext);
+
+    const handleSignin = (e) => {
+        e.preventDefault();
+
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        signinUser(email, password)
+            .then((result) => {
+                console.log(result.user);
+
+                // update last login time
+                const lastSigninTime = result?.user?.metadata?.lastSignInTime;
+                const loginInfo = { email, lastSigninTime };
+
+                fetch(`http://localhost:5000/users`,{
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(loginInfo),
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        console.log("user login info updated", data);
+                    });
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+
     return (
         <div className="min-h-screen flex justify-center items-start">
             <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10">
-                <form className="card-body">
+                <form onSubmit={handleSignin} className="card-body">
                     <div className="form-control">
                         <h3 className="text-xl font-semibold text-center pb-4">
-                            Login to your account
+                            Sign In to your account
                         </h3>
 
                         <label className="label">
