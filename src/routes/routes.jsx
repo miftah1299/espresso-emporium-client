@@ -7,6 +7,7 @@ import Error404 from "../pages/Error404";
 import AuthLayout from "../layouts/AuthLayout";
 import Signin from "../pages/Signin";
 import Signup from "../pages/Signup";
+import Users from "../components/Users";
 
 const routes = createBrowserRouter([
     {
@@ -27,6 +28,11 @@ const routes = createBrowserRouter([
                 element: <UpdateCoffee />,
                 loader: ({ params }) =>
                     fetch(`http://localhost:5000/coffee/${params.id}`),
+            },
+            {
+                path: "users",
+                element: <Users />,
+                loader: () => fetch("http://localhost:5000/users"),
             },
         ],
     },
