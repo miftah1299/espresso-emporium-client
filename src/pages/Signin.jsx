@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../provider/AuthProvider";
+import { AuthContext } from "../provider/AuthContext";
 
 const Signin = () => {
     const { signinUser } = useContext(AuthContext);
@@ -21,7 +21,7 @@ const Signin = () => {
                 const lastSigninTime = result?.user?.metadata?.lastSignInTime;
                 const loginInfo = { email, lastSigninTime };
 
-                fetch(`https://espresso-server-gamma.vercel.app/users`,{
+                fetch(`https://espresso-server-gamma.vercel.app/users`, {
                     method: "PATCH",
                     headers: {
                         "Content-Type": "application/json",
@@ -30,16 +30,16 @@ const Signin = () => {
                 })
                     .then((res) => res.json())
                     .then((data) => {
-                        // console.log("user login info updated", data);
+                        console.log("user login info updated", data);
                     });
             })
             .catch((error) => {
-                // console.log(error);
+                console.log(error);
             });
     };
 
     return (
-        <div className="min-h-screen flex justify-center items-start">
+        <div className="flex justify-center items-center pt-10">
             <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10">
                 <form onSubmit={handleSignin} className="card-body">
                     <div className="form-control">
