@@ -7,7 +7,7 @@ const Home = () => {
     const [coffees, setCoffees] = useState(loadedCoffees);
 
     return (
-        <div className="text-center space-y-4 py-20">
+        <div className="text-center space-y-4">
             <h5>--- SIp & Savor ---</h5>
             <h2>Our Popular Products</h2>
             <button className="btn">Add Coffee</button>
