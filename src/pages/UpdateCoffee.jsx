@@ -24,7 +24,7 @@ const UpdateCoffee = () => {
         // send a PUT request to update the coffee
         fetch(`http://localhost:5000/coffee/${_id}`, {
             method: "PUT",
-            headers: {
+            Navbars: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(updatedCoffee),
