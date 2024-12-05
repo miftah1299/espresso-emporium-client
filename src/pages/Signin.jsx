@@ -40,7 +40,7 @@ const Signin = () => {
 
     return (
         <div className="flex justify-center items-center pt-10">
-            <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10">
+            <div className="card bg-base-100 w-full max-w-lg shrink-0 border border-primaryDark rounded-md p-10">
                 <form onSubmit={handleSignin} className="card-body">
                     <div className="form-control">
                         <h3 className="text-xl font-semibold text-center pb-4">

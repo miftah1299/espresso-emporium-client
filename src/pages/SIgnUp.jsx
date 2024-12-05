@@ -43,7 +43,7 @@ const Signup = () => {
 
     return (
         <div className="min-h-screen flex justify-center items-start">
-            <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10">
+            <div className="card bg-base-100 w-full max-w-lg shrink-0 border border-primaryDark rounded-md p-10">
                 <form onSubmit={handeSignup} className="card-body">
                     <div className="form-control">
                         <h3 className="text-xl font-semibold text-center pb-4">

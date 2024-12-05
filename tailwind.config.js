@@ -14,6 +14,9 @@ export default {
                 rancho: ["Rancho", "cursive"],
                 raleway: ["Raleway", "sans-serif"],
             },
+            backgroundImage: {
+                pattern: 'url("https://i.ibb.co.com/m8rPVGL/11.png")',
+            },
         },
     },
     plugins: [daisyui],

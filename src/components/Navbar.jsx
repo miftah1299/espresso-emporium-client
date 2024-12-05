@@ -3,9 +3,14 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
     return (
         <nav className="bg-primaryDark p-4">
-            <div className="container mx-auto flex justify-between items-center">
-                <div className="font-rancho text-white text-3xl font-medium">
-                    Espresso Emporium
+            <div className="max-w-screen-xl mx-auto flex justify-between items-center">
+                <div className="font-rancho text-white text-3xl font-medium flex gap-2">
+                    <img
+                        className="w-10"
+                        src="https://i.ibb.co.com/nrzBYvp/logo1.png"
+                        alt="logo"
+                    />
+                    <NavLink to="/">Espresso Emporium</NavLink>
                 </div>
                 <div className="space-x-4">
                     <NavLink

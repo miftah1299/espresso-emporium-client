@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 
 const AuthLayout = () => {
     return (
-        <div className="min-h-screen bg-gray-100 space-y-4">
+        <div className="min-h-screen bg-pattern space-y-4">
             <header>
                 <Navbar />
             </header>
