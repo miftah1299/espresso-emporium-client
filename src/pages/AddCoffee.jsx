@@ -16,7 +16,7 @@ const AddCoffee = () => {
         // console.log(coffee);
         fetch("http://localhost:5000/coffee", {
             method: "POST",
-            headers: {
+            Navbars: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(coffee),

@@ -1,15 +1,24 @@
 import { Outlet } from "react-router-dom";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
 
 const HomeLayout = () => {
     return (
-        <div>
-            home
-            <Header />
+        <div className="flex flex-col min-h-screen">
+            {/* <Toaster /> */}
 
-            <Outlet />
+        {/* Navbar */}
+        <Navbar />
+            
+
+            {/* Main Content */}
+            <main className="flex-grow">
+                <Outlet />
+            </main>
+
+            {/* Footer */}
             <Footer />
+            
         </div>
     );
 };

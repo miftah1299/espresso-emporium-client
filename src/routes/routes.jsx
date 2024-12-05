@@ -4,11 +4,14 @@ import HomeLayout from "../layouts/HomeLayout";
 import AddCoffee from "../pages/AddCoffee";
 import UpdateCoffee from "../pages/UpdateCoffee";
 import Error404 from "../pages/Error404";
+import AuthLayout from "../layouts/AuthLayout";
+import Signin from "../pages/Signin";
+import Signup from "../pages/Signup";
 
 const routes = createBrowserRouter([
     {
         path: "/",
-        component: <HomeLayout />,
+        element: <HomeLayout />,
         children: [
             {
                 path: "/",
@@ -24,6 +27,24 @@ const routes = createBrowserRouter([
                 element: <UpdateCoffee />,
                 loader: ({ params }) =>
                     fetch(`http://localhost:5000/coffee/${params.id}`),
+            },
+        ],
+    },
+    {
+        path: "auth",
+        element: <AuthLayout />,
+        children: [
+            {
+                path: "/auth/signin",
+                element: <Signin />,
+            },
+            {
+                path: "/auth/signup",
+                element: <Signup />,
+            },
+            {
+                path: "forgot-password",
+                element: <div>Forgot password</div>,
             },
         ],
     },
