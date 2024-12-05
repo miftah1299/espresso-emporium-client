@@ -3,7 +3,7 @@ const AddCoffee = () => {
     const handleAddCoffee = (event) => {
         event.preventDefault();
         const form = event.target;
-        
+
         const coffee = {
             name: form.name.value,
             chef: form.chef.value,

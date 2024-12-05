@@ -1,11 +1,32 @@
+import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Signup = () => {
+    const { createUser } = useContext(AuthContext);
+
+    const handeSignup = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        createUser(email, password)
+            .then((result) => {
+                console.log(result);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+
     return (
         <div className="min-h-screen flex justify-center items-start">
             <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10">
-                <form className="card-body">
+                <form onSubmit={handeSignup} className="card-body">
                     <div className="form-control">
                         <h3 className="text-xl font-semibold text-center pb-4">
                             Register for an account
@@ -86,7 +107,7 @@ const Signup = () => {
                         {/* sign up with google */}
                         <button
                             // onClick={handleGoogleSignIn}
-                            className="btn btn-outline px-6 py-2 rounded-full hover:bg-primary"
+                            className="btn btn-outline px-6 py-2 rounded-full"
                         >
                             <FcGoogle size={24} />
                             Sign Up with Google
