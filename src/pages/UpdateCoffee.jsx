@@ -24,7 +24,7 @@ const UpdateCoffee = () => {
         // send a PUT request to update the coffee
         fetch(`https://espresso-server-gamma.vercel.app/coffee/${_id}`, {
             method: "PUT",
-            Navbars: {
+            headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(updatedCoffee),
@@ -39,6 +39,7 @@ const UpdateCoffee = () => {
                         icon: "success",
                         confirmButtonText: "Close",
                     });
+                    // form.reset();
                 }
             });
 
