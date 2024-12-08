@@ -23,10 +23,11 @@ Espresso Emporium is a web application for managing and showcasing various coffe
 -   PUT /coffees/:id: Update an existing coffee product.
 -   DELETE /coffees/:id: Delete a coffee product.
 
-# Technologies
+## Technologies
 
--   React
--   Firebase Authentication
--   Firebase Firestore
 -   Tailwind CSS
+-   React
 -   SweetAlert2
+-   Firebase Authentication
+-   Express
+-   MongoDB Atlas
