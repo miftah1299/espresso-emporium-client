@@ -7,6 +7,7 @@ Espresso Emporium is a web application for managing and showcasing various coffe
 -   [Features](#features)
 -   [API Endpoints](#api-endpoints)
 -   [Technologies](#technologies)
+-   [Live Link](#live-link)
 
 ## Features
 
@@ -31,3 +32,7 @@ Espresso Emporium is a web application for managing and showcasing various coffe
 -   Firebase Authentication
 -   Express
 -   MongoDB Atlas
+
+## Live Link
+
+Live Link of Website: [Espresso Emporium](https://espresso-emporium-ac6a3.web.app/)
